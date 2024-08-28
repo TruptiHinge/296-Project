@@ -1,0 +1,172 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Asphalt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/UnevenTerrain.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.17857164600875444 0.27195456335392526 0.9455965750322385 1.213932376090762
+  position -0.8774352144947473 -14.110428108756143 9.56004008495989
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Robot {
+  translation 5.8796807045955 -0.028286123646660714 3.6600075802688186
+  rotation 0.8184804531216777 -0.573491543545959 0.034600539576808025 0.07929378528884638
+  children [
+    InertialUnit {
+    }
+    DEF torso Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 1
+        metalness 0
+      }
+      geometry Box {
+        size 1 1 0.2
+      }
+    }
+    DEF wheel HingeJoint {
+      jointParameters HingeJointParameters {
+        position 32.79989841867588
+        axis 0 1 0
+        anchor -0.3 -0.577883 -0.0631591
+      }
+      device [
+        RotationalMotor {
+          name "motor1"
+        }
+      ]
+      endPoint Solid {
+        translation -0.3 -0.577883 -0.0631591
+        rotation 0.6432008240165179 -0.549722947813242 -0.5330078616981103 4.313028454394146
+        children [
+          DEF wheel_body Shape {
+            appearance Asphalt {
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.18
+            }
+          }
+        ]
+        boundingObject USE wheel_body
+        physics DEF phy1 Physics {
+          mass 1
+        }
+        linearVelocity -3.60557305350362e-06 -4.707551719361989e-06 -5.470115020784788e-07
+        angularVelocity 3.2735495915413735e-09 -1.3210542863143114e-06 3.7794213813374537e-07
+      }
+    }
+    DEF wheel HingeJoint {
+      jointParameters HingeJointParameters {
+        position 32.79667272112433
+        axis 0 1 0
+        anchor 0.3 -0.577883 -0.0631591
+      }
+      device [
+        RotationalMotor {
+          name "motor2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.3 -0.577883 -0.0631591
+        rotation 0.6444386754650341 -0.5489751956541233 -0.5322828459770136 4.314800488972753
+        children [
+          DEF wheel_body Shape {
+            appearance Asphalt {
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.18
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE wheel_body
+        physics DEF phy1 Physics {
+          mass 1
+        }
+        linearVelocity -3.5633371931709236e-06 -4.451189982839662e-06 -3.8798029163445e-07
+        angularVelocity -1.0249586818312803e-10 -1.276930869925273e-06 3.805056112983664e-07
+      }
+    }
+    DEF wheel HingeJoint {
+      jointParameters HingeJointParameters {
+        position 32.799129963377204
+        axis 0 1 0
+        anchor 0.3 0.577883 -0.0631591
+      }
+      device [
+        RotationalMotor {
+          name "motor3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.3 0.577883 -0.0631591
+        rotation 0.6434957370298982 -0.549545021676202 -0.5328353456512162 4.313450823550472
+        children [
+          DEF wheel_body Shape {
+            appearance Asphalt {
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.18
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE wheel_body
+        physics DEF phy1 Physics {
+          mass 1
+        }
+        linearVelocity -4.1817917520177115e-06 -4.585503790299345e-06 -5.014714437265875e-07
+        angularVelocity -3.626847704942834e-08 -5.968241341665481e-07 4.1958273480890876e-07
+      }
+    }
+    DEF wheel HingeJoint {
+      jointParameters HingeJointParameters {
+        position 32.80022957850451
+        axis 0 1 0
+        anchor -0.3 0.577883 -0.0631591
+      }
+      device [
+        RotationalMotor {
+          name "motor4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.3 0.577883 -0.0631591
+        rotation 0.6430737296055407 -0.5497995831807109 -0.5330821668612978 4.3128463955470036
+        children [
+          DEF wheel_body Shape {
+            appearance Asphalt {
+            }
+            geometry Cylinder {
+              height 0.2
+              radius 0.18
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE wheel_body
+        physics DEF phy1 Physics {
+          mass 1
+        }
+        linearVelocity -4.130620100466941e-06 -4.7427198508192004e-06 -4.5432984308036826e-07
+        angularVelocity -7.839611929948759e-09 -1.3497618932957434e-06 3.7552108924798276e-07
+      }
+    }
+  ]
+  boundingObject USE torso
+  physics USE phy1
+  controller "my_controller"
+  linearVelocity -3.875747286761211e-06 -4.622325430901241e-06 -5.033431402807766e-07
+  angularVelocity -1.1437386249636937e-08 -1.1569238319156288e-07 4.5554120541815713e-07
+}
+UnevenTerrain {
+}
